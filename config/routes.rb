@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   resources :users
+  
   get 'static/home'
 
   get 'sessions/new'
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :genres
 
-  resources :artists
+  resources :authors
   
   resources :books
 
