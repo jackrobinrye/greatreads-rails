@@ -3,6 +3,15 @@ class ApplicationController < ActionController::Base
 
 
     private 
+
+    def logged_in?
+        session[:user_id] ? true : false 
+        # if session[:user_id]
+        #     true
+        # else 
+        #     false
+        # end 
+    end 
   
     def current_user
       User.find_by(id: session[:user_id])
@@ -15,5 +24,5 @@ class ApplicationController < ActionController::Base
     def verify_user
       redirect_to '/' unless user_is_authenticated
     end 
-    
+
 end
