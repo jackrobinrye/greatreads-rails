@@ -1,0 +1,4 @@
+<h1><%= @genre.name %></h1>
+<% @genre.books.each do |book| %>
+    <h2><li> <%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, author_path(book.author) %> </li></h2>
+<% end %>
