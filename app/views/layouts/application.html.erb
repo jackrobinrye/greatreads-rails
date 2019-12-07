@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GreatreadsRails</title>
+    <title>Greatreads</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <h1 style="color:navy;font-size:40px;text-align:center">Greatreads</h1>
     <%= yield %>
+    <% if session[:user_id] %>
+        <%= link_to "Log Out", sessions_destroy_path %>
+      <% else %>
+        <%= link_to "Sign In", sessions_new_path %>
+        &emsp;
+        <%= link_to "Sign Up", new_user_path %>
+    <% end %>
   </body>
 </html>
