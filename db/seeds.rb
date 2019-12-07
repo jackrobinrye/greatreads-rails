@@ -1,6 +1,6 @@
 #users
-jack = User.create(name: "Jack", email: "jack@gmail.com", password_digest: "password")
-sarah = User.create(name: "Sarah", email: "sarah@gmail.com", password_digest: "password")
+jack = User.create(name: "Jack", email: "jack@gmail.com", password: "password")
+sarah = User.create(name: "Sarah", email: "sarah@gmail.com", password: "password")
 
 #authors
 tolkein = Author.create(name: "J R R Tolkein", birthdate: Time.new(1892, 1, 3))
