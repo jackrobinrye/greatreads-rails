@@ -11,10 +11,9 @@
 
   <body>
 
-
     <style>
       body {
-        background-image: url("https://img.wallpapersafari.com/desktop/1366/768/38/60/JFLrg6.png");
+        background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/38/60/JFLrg6.png");
         background-attachment: fixed;
         background-repeat: no-repeat;
         color: #333;
@@ -23,8 +22,7 @@
       }
     </style>
 
-
-    <h1 style="color:navy;font-size:40px;text-align:center">Greatreads</h1>
+    <h1 style="font-size:40px;text-align:center">Greatreads</h1>
     <%= yield %>
     <% if session[:user_id] %>
         <%= link_to "Log Out", sessions_destroy_path %>
