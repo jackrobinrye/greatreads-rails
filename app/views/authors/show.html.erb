@@ -9,4 +9,7 @@
     <h3><li><%= link_to genre.name, genre_path(genre) %></li></h3>
   <% end %>
 <h2>Biography:</h2>
-<p><% @author.bio %></p>
+  <% if @author.birthdate %> 
+    <p>Born on <%= @author.birthdate.strftime("%B %-d, %Y.") %>
+  <% end %>
+  <p><%= @author.bio %></p>
