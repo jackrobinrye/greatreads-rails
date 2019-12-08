@@ -1,13 +1,20 @@
 <h1> <%= @author.name %> </h1>
-<h2> Books: </h2>
-  <% @author.books.each do |book| %>
-    <h3><li><%= link_to book.title, book_path(book) %></li></h3>
-  <% end %>
-<br>
-<h2> Genres: </h2>
-  <% @author.genres.uniq.each do |genre| %>
-    <h3><li><%= link_to genre.name, genre_path(genre) %></li></h3>
-  <% end %>
+
+<% if @author.books != [] %>
+  <h2> Books: </h2>
+    <% @author.books.each do |book| %>
+      <h3><li><%= link_to book.title, book_path(book) %></li></h3>
+    <% end %>
+  <br>
+<% end %>
+
+<% if @author.genres != [] %>
+  <h2> Genres: </h2>
+    <% @author.genres.uniq.each do |genre| %>
+      <h3><li><%= link_to genre.name, genre_path(genre) %></li></h3>
+    <% end %>
+<% end %>
+
 <h2>Biography:</h2>
   <% if @author.birthdate %> 
     <p>Born on <%= @author.birthdate.strftime("%B %-d, %Y.") %>
