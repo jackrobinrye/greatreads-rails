@@ -4,5 +4,9 @@ class BooksController < ApplicationController
         @book = Book.find_by(id: params[:id])
     end 
 
+    def index
+        @books = Book.all
+    end 
+
 
 end

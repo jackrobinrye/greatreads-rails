@@ -4,6 +4,10 @@ class AuthorsController < ApplicationController
         @author = Author.find_by(id: params[:id])
     end 
 
+    def index 
+        @authors = Author.all
+    end 
+
     def new 
         @author = Author.new
     end 
