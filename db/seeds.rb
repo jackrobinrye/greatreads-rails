@@ -3,9 +3,21 @@ jack = User.create(name: "Jack", email: "jack@gmail.com", password: "password")
 sarah = User.create(name: "Sarah", email: "sarah@gmail.com", password: "password")
 
 #authors
-tolkein = Author.create(name: "J R R Tolkein", birthdate: Time.new(1892, 1, 3))
-brown = Author.create(name: "Dan Brown", birthdate: Time.new(1964, 6, 22))
-rowling = Author.create(name: "JK Rowling", birthdate: Time.new(1965, 7, 31))
+tolkein = Author.create(
+    name: "J R R Tolkein", 
+    birthdate: Time.new(1892, 1, 3),
+    bio: "John Ronald Reuel Tolkien was an English writer, poet, philologist, and academic, who is best known as the author of the classic high fantasy works The Hobbit, The Lord of the Rings, and The Silmarillion."
+    )
+brown = Author.create(
+    name: "Dan Brown", 
+    birthdate: Time.new(1964, 6, 22),
+    bio: "The son of a mathematics teacher and a church organist, Brown was raised on a prep school campus where he developed a fascination with the paradoxical interplay between science and religion. These themes eventually formed the backdrop for his books. He is a graduate of Amherst College and Phillips Exeter Academy, where he later returned to teach English before focusing his attention full time to writing. He lives in New England with his wife."
+    )
+rowling = Author.create(
+    name: "JK Rowling", 
+    birthdate: Time.new(1965, 7, 31),
+    bio: "Joanne Rowling, better known by her pen name J. K. Rowling, is a British author, film producer, television producer, screenwriter, and philanthropist. She is best known for writing the Harry Potter fantasy series, which has won multiple awards and sold more than 500 million copies, becoming the best-selling book series in history. The books are the basis of a popular film series, over which Rowling had overall approval on the scripts and was a producer on the final films. She also writes crime fiction under the name Robert Galbraith."
+    )
 
 #genres
 fantasy = Genre.create(name: "Fantasy")

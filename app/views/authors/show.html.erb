@@ -19,3 +19,7 @@
     <p>Born on <%= @author.birthdate.strftime("%B %-d, %Y.") %>
   <% end %>
   <p><%= @author.bio %></p>
+
+  <br> 
+
+  <%= link_to "Delete", delete_author_path(@author.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@author.name} and all their books?" } %>

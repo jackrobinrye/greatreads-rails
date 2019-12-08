@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   post 'sessions/create'
   get 'sessions/destroy'
 
-  resources :users
+  resources :authors
+  delete 'author/:id', to: 'authors#destroy', as: :delete_author
+
+  resources :books
 
   resources :genres
 
-  resources :authors
-  
-  resources :books
+  resources :users
 
 end

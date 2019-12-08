@@ -18,6 +18,15 @@ class UsersController < ApplicationController
 
     def show 
         @user = User.find_by(id: params[:id])
+        @read_books = []
+        @unread_books = []
+        @user.book_records.each do |record|
+            if record.read == true 
+                @read_books << record.book 
+            else 
+                @unread_books << record.book
+            end 
+        end
     end 
 
     def index
