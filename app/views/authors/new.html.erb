@@ -1,0 +1,13 @@
+<h1>Create Author:</h1>
+<%= form_for(@author) do |f| %>
+
+  <%= f.label :name %>:<br>
+  <%= f.text_field :name %><br><br>
+
+  Birthdate:<br>
+  
+  <%= datetime_field(:user, :birthdate) %><br><br>
+
+  <%= f.submit %>
+
+<% end %>

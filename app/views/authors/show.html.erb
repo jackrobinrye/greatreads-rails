@@ -8,4 +8,5 @@
   <% @author.genres.uniq.each do |genre| %>
     <h3><li><%= link_to genre.name, genre_path(genre) %></li></h3>
   <% end %>
-<br>
+<h2>Biography:</h2>
+<p><% @author.bio %></p>
