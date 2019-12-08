@@ -1,2 +1,13 @@
-<h1>BookRecord#new</h1>
-<p>Find me in app/views/book_record/new.html.erb</p>
+<h1>Add a Book to Your Library:</h1>
+    <%= form_for(@book_record) do |f| %>
+
+        <%= f.label :book %>:
+        <%= collection_select(:book_record, :book_id, @unregistered_books, :id, :title, prompt: true) %>
+        <br><br>
+
+        <%= f.check_box :read %> I've read this.
+        <br><br>
+
+        <%= f.submit %>
+
+    <% end %>

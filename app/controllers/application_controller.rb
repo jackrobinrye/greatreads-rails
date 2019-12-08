@@ -8,11 +8,6 @@ class ApplicationController < ActionController::Base
 
     def logged_in?
         session[:user_id] ? true : false 
-        # if session[:user_id]
-        #     true
-        # else 
-        #     false
-        # end 
     end 
   
     def current_user

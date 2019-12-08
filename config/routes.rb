@@ -18,6 +18,5 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :book_records
 
 end
