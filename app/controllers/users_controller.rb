@@ -27,6 +27,7 @@ class UsersController < ApplicationController
                 @unread_books << record.book
             end 
         end
+        @read_books = @read_books.sort_by {|book| book.author.name}
     end 
 
     def index
