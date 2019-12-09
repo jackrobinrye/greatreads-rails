@@ -22,8 +22,17 @@
       }
     </style>
 
-    <h1 style="font-size:40px;text-align:center">Greatreads</h1>
+    <h1 style="font-size:40px;text-align:center"><%= link_to "Greatreads", root_path %></h1>
+    
+    <div class="topnav" style="text-align:right">
+      <a href=new_book_record_path>Add Book To My Library</a>
+      <a href=new_book_path>Create New Book</a>
+      <a href=new_author_path>Create New Author</a>
+      <a href=authors_path>Browse</a>
+    </div>
+
     <%= yield %>
+
     <br><br><br>
     <% if session[:user_id] %>
         <%= link_to "Log Out", sessions_destroy_path %>
