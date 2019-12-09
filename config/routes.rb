@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'static/home'
   root 'static#home'
+  get '/browse', to: 'static#browse', as: :browse
   
   get 'sessions/new'
   post 'sessions/create'

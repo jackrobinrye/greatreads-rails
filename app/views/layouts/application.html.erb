@@ -24,12 +24,15 @@
 
     <h1 style="font-size:40px;text-align:center"><%= link_to "Greatreads", root_path %></h1>
     
-    <div class="topnav" style="text-align:right">
-      <a href=new_book_record_path>Add Book To My Library</a>
-      <a href=new_book_path>Create New Book</a>
-      <a href=new_author_path>Create New Author</a>
-      <a href=authors_path>Browse</a>
-    </div>
+    <p style="text-align:left;">
+      <a href= <%= new_book_record_path %> >Add Book To My Library</a>
+      <a href= <%= new_book_path %> >Create New Book</a>
+      <a href= <%= new_author_path %> >Create New Author</a>
+      <span style="float:right;">
+          <a href= <%= browse_path %> >Browse</a>
+          <a href= <%= user_path(current_user) %> >My Page</a>
+      </span>
+    </p>
 
     <%= yield %>
 
