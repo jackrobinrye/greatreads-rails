@@ -1,4 +1,4 @@
-<% if !session[:id] %>
+<% if !session[:user_id] %>
   <%= link_to "Sign In", sessions_new_path %>
   &emsp;
   <%= link_to "Sign Up", new_user_path %>

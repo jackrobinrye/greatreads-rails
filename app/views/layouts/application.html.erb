@@ -24,7 +24,7 @@
 
     <h1 style="font-size:40px;text-align:center"><%= link_to "Greatreads", root_path %></h1>
     
-    <% if session[:id] %>
+    <% if session[:user_id] %>
       <p style="text-align:left;">
         <a href= <%= new_book_record_path %> >Add Book To My Library</a>
         <a href= <%= new_book_path %> >Create New Book</a>
@@ -34,6 +34,7 @@
             <a href= <%= user_path(current_user) %> >My Page</a>
         </span>
       </p>
+      <br>
     <% end %>
 
     <%= yield %>
