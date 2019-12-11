@@ -4,6 +4,7 @@ class BookRecordsController < ApplicationController
     @book_record = BookRecord.new
     registered_books = current_user.book_records.map { |book_record| book_record.book }
     @unregistered_books = Book.all - registered_books
+    @unregistered_books = @unregistered_books.sort_by {|book| book.title}
   end
 
   def create

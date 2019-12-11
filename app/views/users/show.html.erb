@@ -1,11 +1,15 @@
 <h1> <%= @user.name %> </h1>
 
-<h2> Read Books: </h2>
-    <% @read_books.each do |book| %>
-        <h3><li><%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, author_path(book.author) %> </li></h3>
-    <% end %>
+<% if @read_books != [] %>
+    <h2> Read Books: </h2>
+        <% @read_books.each do |book| %>
+            <h3><li><%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, author_path(book.author) %> </li></h3>
+        <% end %>
+<% end %>
 
-<h2> Books that <%= current_user.name %> is interested in: </h2>
-    <% @unread_books.each do |book| %>
-        <h3><li><%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, author_path(book.author) %> </li></h3>
-    <% end %>
+<% if @unread_books != [] %> 
+    <h2> Books that <%= current_user.name %> is interested in: </h2>
+        <% @unread_books.each do |book| %>
+            <h3><li><%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, author_path(book.author) %> </li></h3>
+        <% end %>
+<% end %>
