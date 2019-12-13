@@ -9,15 +9,18 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
   
   resources :authors
-  delete 'author/:id', to: 'authors#destroy', as: :delete_author
+  delete 'authors/:id', to: 'authors#destroy', as: :delete_author
   
   resources :books
+  delete 'books/:id', to: 'books#destroy', as: :delete_book
   
   resources :book_records
 
   resources :genres
+  delete 'genres/:id', to: 'genres#destroy', as: :delete_genre
 
   resources :users
+  delete 'users/:id', to: 'users#destroy', as: :delete_user
 
 
 end

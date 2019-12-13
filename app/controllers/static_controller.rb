@@ -1,7 +1,7 @@
 class StaticController < ApplicationController
 
   def home
-    @books = Book.all
+    @books = sorted_books
   end
 
   def browse

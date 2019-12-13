@@ -5,7 +5,7 @@ class BooksController < ApplicationController
     end 
 
     def index
-        @books = Book.all
+        @books = sorted_books
     end 
 
     def new 
@@ -34,7 +34,10 @@ class BooksController < ApplicationController
         end
     end 
 
-
+    def destroy
+        Book.find_by(id: params[:id]).destroy
+        redirect_to books_path
+    end 
 
 
     private

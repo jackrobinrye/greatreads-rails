@@ -21,5 +21,5 @@
   <p><%= @author.bio %></p>
 
   <br> 
-
+  <%= link_to "Edit Author", edit_author_path %> <br>
   <%= link_to "Delete", delete_author_path(@author.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@author.name} and all their books?" } %>
