@@ -5,7 +5,7 @@ class BooksController < ApplicationController
     end 
 
     def index
-        @books = sorted_books
+        @books = Book.all.sort_by { |book| book.title}
     end 
 
     def new 

@@ -28,8 +28,8 @@ class ApplicationController < ActionController::Base
       end 
     end
 
-    def sorted_books 
-      Book.all.sort_by {|book| [book.author.name, book.title]}
+    def sorted_books(book_array)
+      book_array.sort_by {|book| [book.author.name, book.title]}
     end
 
 end

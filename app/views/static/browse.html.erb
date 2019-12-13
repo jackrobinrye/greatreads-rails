@@ -2,20 +2,23 @@
     <h2>Browse by Genre:</h2>
 
         <div style="float: left; width: 25%;">
-        <ul>
+       
             <% @genres[0..3].each do |genre| %>
                 <li><%= link_to genre.name, genre_path(genre) %></li>
             <% end %>
-        </ul>
+       
         </div>
         <div style="float: right; width: 75%;">
-        <ul>
+        
             <% @genres[4..6].each do |genre| %>
                 <li><%= link_to genre.name, genre_path(genre) %></li>
             <% end %>
             <br>
-        </ul>
         </div>
     <br>
+    <br>
+    <br>
+    <br>
     <h2> <%= link_to "Browse by Author", authors_path %> </h2>
+    <h2> <%= link_to "Browse by Title", books_path %> </h2>
         
