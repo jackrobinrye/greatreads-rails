@@ -2,10 +2,11 @@ class AuthorsController < ApplicationController
 
     def show 
         @author = Author.find_by(id: params[:id])
+        @books = sorted_books(@author.books)
     end 
 
     def index 
-        @authors = Author.all.sort_by {|author| author.name}
+        @authors = sorted_authors(Author.all)
     end 
 
     def new 

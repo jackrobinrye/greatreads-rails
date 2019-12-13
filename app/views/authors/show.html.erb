@@ -2,7 +2,7 @@
 
 <% if @author.books != [] %>
   <h2> Books: </h2>
-    <% @author.books.each do |book| %>
+    <% @books.each do |book| %>
       <h3><li><%= link_to book.title, book_path(book) %></li></h3>
     <% end %>
 <% end %>

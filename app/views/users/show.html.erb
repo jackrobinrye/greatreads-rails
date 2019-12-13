@@ -7,7 +7,7 @@
         <% end %>
 <% end %>
 
-<% if @unread_books != [] %> 
+<% if !@unread_books.empty? && @unread_books != [nil] %> 
     <h2> Books that <%= current_user.name %> is interested in: </h2>
         <% @unread_books.each do |book| %>
             <h3><li><%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, author_path(book.author) %> </li></h3>

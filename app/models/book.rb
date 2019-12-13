@@ -5,4 +5,5 @@ class Book < ApplicationRecord
     belongs_to :genre
 
     validates :title, uniqueness: { scope: :author }
+    validates :title, :author_id, :genre_id, presence: true
 end
