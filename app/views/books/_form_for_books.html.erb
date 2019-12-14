@@ -1,0 +1,14 @@
+<%= form_for(book) do |f| %>
+
+    <%= f.label :title %>:<br>
+    <%= f.text_field :title %><br><br>
+  
+    <%= f.label :author %>:
+    <%= collection_select(:book, :author_id, Author.all.sort_by {|author| author.name}, :id, :name, prompt: true) %><br><br>
+  
+    <%= f.label :genre %>
+    <%= collection_select(:book, :genre_id, Genre.all, :id, :name, prompt: true) %><br><br>
+  
+    <%= f.submit %>
+  
+  <% end %>
