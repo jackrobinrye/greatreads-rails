@@ -12,7 +12,7 @@ class BookRecordsController < ApplicationController
   def create
     @book_record = BookRecord.new(user_id: current_user.id, book_id: book_record_params[:book_id], read: book_record_params[:read], notes: book_record_params[:notes])
     if @book_record.save
-        redirect_to book_record_path(@book_record)
+        redirect_to book_path(@book_record.book_id)
     else 
         redirect_to new_book_record_path
     end 
@@ -27,11 +27,6 @@ class BookRecordsController < ApplicationController
     @book_record.update(read: book_record_params[:read], notes: book_record_params[:notes])
     redirect_to book_record_path(@book_record)
   end 
-
-  def show
-    @book_record = BookRecord.find_by(id: params[:id])
-    user_is_current(@book_record.user_id)
-  end
 
   def destroy
     BookRecord.find_by(id: params[:id]).destroy
