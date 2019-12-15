@@ -17,12 +17,14 @@ class BookRecordsController < ApplicationController
   end 
 
   def edit
+    @book_record = BookRecord.find_by(id: params[:id])
   end
 
   def update
   end 
 
   def show
+    @book_record = BookRecord.find_by(id: params[:id])
   end
 
   def destroy

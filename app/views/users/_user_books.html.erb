@@ -1,0 +1,13 @@
+<% if read_books != [] %>
+    <h2> Read Books: </h2>
+        <% read_books.each do |book| %>
+            <h3><li><%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, author_path(book.author) %> </li></h3>
+        <% end %>
+<% end %>
+
+<% if !unread_books.empty? && unread_books != [nil] %> 
+    <h2> <%= current_user.name %> is interested in: </h2>
+        <% unread_books.each do |book| %>
+            <h3><li><%= link_to book.title, book_path(book) %> by <%= link_to book.author.name, author_path(book.author) %> </li></h3>
+        <% end %>
+<% end %>

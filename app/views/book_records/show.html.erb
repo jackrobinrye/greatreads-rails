@@ -1,2 +1,8 @@
-<h1>BookRecord#show</h1>
-<p>Find me in app/views/book_record/show.html.erb</p>
+<%= render partial: "books/book", locals: {book: @book_record.book} %>
+<p><%= @book_record.user.name %> 
+    <% if @book_record.read == true %>
+        has read this book. 
+    <% else %>
+        wants to read this book. 
+    <% end %>
+</p>
