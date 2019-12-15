@@ -1,5 +1,7 @@
 class BookRecordsController < ApplicationController
 
+  before_action :verify_user, only: [:show]
+
   def new
     @book_record = BookRecord.new
     registered_books = current_user.book_records.map { |book_record| book_record.book }
@@ -25,6 +27,7 @@ class BookRecordsController < ApplicationController
 
   def show
     @book_record = BookRecord.find_by(id: params[:id])
+    user_is_current(@book_record.user_id)
   end
 
   def destroy

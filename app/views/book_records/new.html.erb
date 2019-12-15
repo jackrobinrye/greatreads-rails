@@ -5,9 +5,6 @@
         <%= collection_select(:book_record, :book_id, @unregistered_books, :id, :title, prompt: true) %>
         <br><br>
 
-        <%= f.check_box :read %> I've read this.
-        <br><br>
-
-        <%= f.submit %>
+        <%= render partial: "half_form", locals: {f: f} %>
 
     <% end %>

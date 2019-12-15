@@ -22,6 +22,13 @@ class ApplicationController < ActionController::Base
       redirect_to '/' unless user_is_authenticated
     end 
 
+    def user_is_current(user_id)
+      if user_is_authenticated && current_user == user_id
+      else 
+        redirect_to '/'
+      end 
+    end 
+
     def admin_only
       if user_is_authenticated && session[:user_id].to_s == params[:id]
         true
