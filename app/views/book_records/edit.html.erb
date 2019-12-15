@@ -1,9 +1,7 @@
 <h2><%= @book_record.book.title %></h2>
 
-<% form_for @book_record do |f| %>
+<%= form_for @book_record do |f| %>
 
-    <%= f.check_box :read %> I've read this.
-    <br><br>
-
-    <%= f.submit %>
+    <%= render partial: "half_form", locals: {f: f} %>
+    
 <%end%>

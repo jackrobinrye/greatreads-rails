@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   delete 'books/:id', to: 'books#destroy', as: :delete_book
   
   resources :book_records
+  delete 'book_records/:id', to: 'book_records#destroy', as: :delete_book_record
 
   resources :genres
   delete 'genres/:id', to: 'genres#destroy', as: :delete_genre

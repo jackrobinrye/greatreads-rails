@@ -1,8 +1,14 @@
 <%= render partial: "books/book", locals: {book: @book_record.book} %>
-<p><%= @book_record.user.name %> 
+<p>You
     <% if @book_record.read == true %>
-        has read this book. 
+        have read this book. 
     <% else %>
-        wants to read this book. 
+        want to read this book. 
     <% end %>
 </p>
+<% if @book_record.notes %>
+<h2>Notes:</h3>
+<div style="font-size:19px;line-height:1.4;"><%= @book_record.notes %></div>
+<br>
+<% end %>
+<%= link_to "Edit Record", edit_book_record_path(@book_record) %>

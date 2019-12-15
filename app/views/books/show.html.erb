@@ -1,3 +1,8 @@
 <%= render partial: "book", locals: {book: @book} %>
+
+<% if BookRecord.find_by(user_id: current_user.id, book_id: @book.id) %>
+    <%= render partial: "book_records/book_record_info", locals: {book_record: BookRecord.find_by(user_id: current_user.id, book_id: @book.id)} %>
+<% end %>
+
 <%= link_to "Edit Book", edit_book_path %><br>
-<%= link_to "Delete", delete_book_path(@book.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@book.title}?" } %>
+<%= link_to "Delete Book", delete_book_path(@book.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@book.title}?" } %>
