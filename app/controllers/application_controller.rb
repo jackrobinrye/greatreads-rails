@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     end 
 
     def user_is_current(user_id)
-      if user_is_authenticated && current_user == user_id
+      if user_is_authenticated && current_user.id == user_id
       else 
         redirect_to '/'
       end 
