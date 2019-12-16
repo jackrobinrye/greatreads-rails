@@ -23,7 +23,6 @@
           background-repeat: no-repeat;
           font-family: "Lucida Console", Monaco, monospace;
           line-height: 18px;
-          bottom: -22px;
         }
 
         .footer {
@@ -41,12 +40,9 @@
 
   <body>
 
-    <div class="header">
-      <h1 style="font-size:40px;text-align:center"><%= link_to "Greatreads", root_path %></h1>
     
-    </div>
-    <br>
-
+    
+    <h1 style="font-size:40px;text-align:center"><%= link_to "Greatreads", root_path %></h1>
     
     <% if session[:user_id] %>
       <p style="text-align:left;">
@@ -68,5 +64,6 @@
         <%= link_to "Log Out", sessions_destroy_path %>
     <% end %>
     </div>
+    <br>
   </body>
 </html>
